@@ -1,4 +1,4 @@
 term.clear()
-term.setCursorPos(20,1)
+term.setCursorPos(21,1)
 print("Messenger")
 
