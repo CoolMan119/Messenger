@@ -5,7 +5,11 @@ function Setup()
   term.clear()
   term.setCursorPos(1,20)
   term.setTextColor(colors.white)
-  print("Setup")
+  textutils.slowPrint("Welcome to Messaging!")
+  textutils.slowPrint("Before we can continue, we have to setup the app for you")
+  os.sleep(2)
+  term.clear()
+  
   
 end
  
