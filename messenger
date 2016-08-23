@@ -1,3 +1,4 @@
+--TheDacinator was here!
 term.clear()
 if fs.exists("/status") == false then
    file = fs.open("/status", "w")
