@@ -17,15 +17,16 @@ end
        
 
 function Setup()
-   term.clear()
-   term.setBackgroundColor(colors.gray)
-   term.setCursorPos(1,18)
-   print("Welcome to Setup!")
-   end
+  term.clear()
+  term.setBackgroundColor(colors.gray)
+  term.setCursorPos(1,18)
+  print("Welcome to Setup!")
+ end
+ 
 
 function Load()
-term.clear()
-print("Loaded")
-print("This app does nothing yet, Sorry!")
+ term.clear()
+ print("Loaded")
+ print("This app does nothing yet, Sorry!")
 end
 
