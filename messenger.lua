@@ -4,6 +4,7 @@ function Setup()
   term.setBackgroundColor(colors.gray)
   term.clear()
   term.setCursorPos(1,20)
+  term.setTextColor(colors.white)
   print("Setup")
   
 end
