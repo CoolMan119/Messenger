@@ -2,8 +2,10 @@
 function Setup()
   term.clear()
   term.setBackgroundColor(colors.gray)
-  term.setCursorPos(1,18)
-  print("Welcome to Setup!")
+  term.clear()
+  term.setCursorPos(1,20)
+  print("Setup")
+  
 end
  
 
