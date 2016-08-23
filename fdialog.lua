@@ -1,4 +1,4 @@
-- File Dialog API by CrazedProgrammer
+-- File Dialog API by CrazedProgrammer
 -- You can find info and documentation on these pages:
 --
 -- You may use this in your ComputerCraft programs and modify it without asking.
