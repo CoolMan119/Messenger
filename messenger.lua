@@ -46,7 +46,7 @@ end
 function Load()
   term.clear()
   print("Loaded")
-  print("This app does nothing yet, Sorry!")
+  print("This app is under development and doesn't work yet, Sorry!")
 end
 
 -- Program Starts Here
