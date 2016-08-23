@@ -8,6 +8,10 @@ local files = {
     [2] = {
         "AES",
         "https://raw.githubusercontent.com/CoolMan119/Messenger/master/AES.lua"
+    },
+    [3] = {
+        "fdialog",
+        "https://raw.githubusercontent.com/CoolMan119/Messenger/master/fdialog.lua"
     }
 }
 
