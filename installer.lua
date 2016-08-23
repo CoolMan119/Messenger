@@ -62,7 +62,7 @@ term.setTextColor(colors.white)
 
 term.setCursorPos(1, 1)
 
-print("Messenger upgrader/installer")
+print("Messenger Installer")
 
 term.setBackgroundColor(colors.gray)
 
