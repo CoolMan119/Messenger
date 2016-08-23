@@ -4,7 +4,7 @@ function Setup()
   term.setBackgroundColor(colors.gray)
   term.setCursorPos(1,18)
   print("Welcome to Setup!")
- end
+end
  
 
 function Load()
@@ -16,17 +16,16 @@ end
 -- Program Starts Here
 term.clear()
 if fs.exists("/status") == false then
-   file = fs.open("/status", "w")
-   file.write("nosetup")
-   file.close()
-   Setup()
+  file = fs.open("/status", "w")
+  file.write("nosetup")
+  file.close()
+  Setup()
 elseif fs.exists("/status") == true then
-    file = fs.open("/status", "r")
-    result = file.readLine()
-    if result == "nosetup" then
-       Setup()
-   elseif result == "complete" then
+  file = fs.open("/status", "r")
+  result = file.readLine()
+  if result == "nosetup" then
+    Setup()
+  elseif result == "complete" then
     Load()
-    end
+  end
 end
-
