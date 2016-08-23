@@ -9,8 +9,36 @@ function Setup()
   textutils.slowPrint("Before we can continue, we have to setup the app for you")
   os.sleep(2)
   term.clear()
+  term.setBackgroundColor(colors.gray)
+  term.clear()
+  term.setCursorPos(1,1)
+  print("Please type in a color theme")
+  colortheme = read()
+  print("Applying...")
+  shell.run("mkdir","config")
+  shell.run("cd","config")
+  file = fs.open("/config/color", "w")
+  file.write(colortheme)
+  file.close()
+  term.clear()
+  term.setCursorPos(1,1)
+  textutils.slowPrint("Checking for rednet...")
+  rednetCheckSetup()
   
-  
+    function rednetCheckSetup()
+  local modemSide = getDeviceSide("modem")
+  if (modemSide) then
+     print("Rednet Found")
+     textutils.slowPrint("Welp, this is the end of Setup! I really hope you enjoy this app! Please report all bugs on the Issues fourms! Thank You and have a Nice Day!")
+     os.sleep(3)
+     fs.delete("/status")
+     file = fs.open("/status", "w")
+     file.write("complete")
+     file.exit()
+     Load()
+  else
+    print("Please attach a modem. Press Enter to retry")
+    rednetCheckSetup()
 end
  
 
