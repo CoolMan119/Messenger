@@ -26,7 +26,7 @@ function Setup()
   rednetCheckSetup()
   end
   
-    function rednetCheckSetup()
+function rednetCheckSetup()
   local modemSide = getDeviceSide("modem")
   if (modemSide) then
      print("Rednet Found")
