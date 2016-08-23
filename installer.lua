@@ -104,6 +104,8 @@ local each = math.floor(x / #files)
 
 local lastX = 1
 
+local closeMessage = "Done!"
+
 for k, v in pairs(files) do
     req = http.get(v[2])
 
@@ -113,6 +115,8 @@ for k, v in pairs(files) do
         req.close()
     else
         paintutils.drawLine(1, 5, x, 5, colors.red)
+
+        closeMessage = "Failed!"
 
         break
     end
@@ -134,7 +138,7 @@ end
 
 term.setBackgroundColor(colors.gray)
 
-cPrint("Done!", y - 3)
+cPrint(closeMessage, y - 3)
 
 sleep(3)
 
