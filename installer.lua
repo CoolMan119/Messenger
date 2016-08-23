@@ -16,7 +16,10 @@ local files = {
     [3] = {
         "fdialog",
         "https://raw.githubusercontent.com/CoolMan119/Messenger/master/fdialog.lua"
-    }
+    },
+    [4] = {
+        "encryption",
+        "https://github.com/CoolMan119/Messenger/blob/master/encryption.lua"
 }
 
 local suffix = "Install" 
