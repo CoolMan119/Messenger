@@ -112,7 +112,7 @@ for k, v in pairs(files) do
 
         req.close()
     else
-        paintutils.drawLine(1, 5, x, 5, colors.lime)
+        paintutils.drawLine(1, 5, x, 5, colors.red)
 
         break
     end
@@ -126,7 +126,7 @@ for k, v in pairs(files) do
     file = fs.open(v[1], "w")
 
     file.write(code)
-
+ 
     file.close()
 
     lastX = lastX + each
