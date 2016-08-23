@@ -1,11 +1,11 @@
 term.clear()
 if fs.exists("/status") == false then
-   file = fs.open("/status")
+   file = fs.open("/status", "w")
    file.write("nosetup")
    file.close()
    Setup()
 elseif fs.exists("/status") == true then
-    file = fs.open("/status")
+    file = fs.open("/status", "r")
     result = file.readLine()
     if result == "nosetup" then
        Setup()
