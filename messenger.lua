@@ -1,9 +1,9 @@
 -- Gets functions ready for use
 function Setup()
   term.clear()
-  term.setBackgroundColor(colors.gray)
+  term.setBackgroundColor(colors.black)
   term.clear()
-  term.setCursorPos(20,1)
+  term.setCursorPos(1,20)
   term.setTextColor(colors.white)
   print("Setup")
   
