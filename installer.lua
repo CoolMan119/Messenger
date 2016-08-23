@@ -1,9 +1,21 @@
 os.pullEvent = os.pullEventRaw
 
+if not term.isColor() then
+    error("For advanced computers only!")
+end
+
 local files = {
     [1] = {
         "messenger",
-        "https://raw.githubusercontent.com/CoolMan119/Messenger/master/messenger"
+        "https://raw.githubusercontent.com/CoolMan119/Messenger/master/messenger.lua"
+    },
+    [2] = {
+        "AES",
+        "https://raw.githubusercontent.com/CoolMan119/Messenger/master/AES.lua"
+    },
+    [3] = {
+        "fdialog",
+        "https://raw.githubusercontent.com/CoolMan119/Messenger/master/fdialog.lua"
     }
 }
 
@@ -104,12 +116,22 @@ local each = math.floor(x / #files)
 
 local lastX = 1
 
+local closeMessage = "Done!"
+
 for k, v in pairs(files) do
     req = http.get(v[2])
 
-    code = req.readAll()
+    if req ~= nil then
+        code = req.readAll()
 
-    req.close()
+        req.close()
+    else
+        paintutils.drawLine(1, 5, x, 5, colors.red)
+
+        closeMessage = "Failed!"
+
+        break
+    end
 
     if #files == k then
         paintutils.drawLine(1, 5, x, 5, colors.lime)
@@ -120,7 +142,7 @@ for k, v in pairs(files) do
     file = fs.open(v[1], "w")
 
     file.write(code)
-
+ 
     file.close()
 
     lastX = lastX + each
@@ -128,7 +150,7 @@ end
 
 term.setBackgroundColor(colors.gray)
 
-cPrint("Done!", y - 3)
+cPrint(closeMessage, y - 3)
 
 sleep(3)
 
