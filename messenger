@@ -1,3 +1,19 @@
+-- Gets functions ready for use
+function Setup()
+  term.clear()
+  term.setBackgroundColor(colors.gray)
+  term.setCursorPos(1,18)
+  print("Welcome to Setup!")
+ end
+ 
+
+function Load()
+ term.clear()
+ print("Loaded")
+ print("This app does nothing yet, Sorry!")
+end
+
+-- Program Starts Here
 term.clear()
 if fs.exists("/status") == false then
    file = fs.open("/status", "w")
@@ -12,21 +28,5 @@ elseif fs.exists("/status") == true then
    elseif result == "complete" then
           Load()
 end
-end
-
-       
-
-function Setup()
-  term.clear()
-  term.setBackgroundColor(colors.gray)
-  term.setCursorPos(1,18)
-  print("Welcome to Setup!")
- end
- 
-
-function Load()
- term.clear()
- print("Loaded")
- print("This app does nothing yet, Sorry!")
 end
 
