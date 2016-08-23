@@ -1,4 +1,27 @@
 term.clear()
-term.setCursorPos(21,1)
-print("Messenger")
+if fs.exists("/status") == false then
+   file = fs.open("/status")
+   file.write("nosetup")
+   file.close()
+   Setup()
+elseif fs.exists("/status") == true then
+    file = fs.open("/status")
+    result = file.readLine()
+    if result == "nosetup" then
+       Setup()
+   elseif result == "complete" then
+          Load()
+       
+
+function Setup()
+   term.clear()
+   term.setBackgroundColor(colors.gray)
+   term.setCursorPos(1,18)
+   print("Welcome to Setup!")
+   end
+
+function Load()
+term.clear()
+print("Loaded")
+print("This app does nothing yet, Sorry!")
 
