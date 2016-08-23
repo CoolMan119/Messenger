@@ -1,5 +1,13 @@
 os.pullEvent = os.pullEventRaw
 
+if not term.isColor() then
+    colors.lime = colors.white
+
+    colors.blue = colors.white
+
+    colors.red = colors.lightGray
+end
+
 local files = {
     [1] = {
         "messenger",
