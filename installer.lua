@@ -3,7 +3,11 @@ os.pullEvent = os.pullEventRaw
 local files = {
     [1] = {
         "messenger",
-        "https://raw.githubusercontent.com/CoolMan119/Messenger/master/messenger.lua"
+        "https://raw.githubusercontent.com/CoolMan119/Messenger/master/messenger"
+    },
+    [2] = {
+        "AES",
+        "https://raw.githubusercontent.com/CoolMan119/Messenger/master/AES.lua"
     }
 }
 
