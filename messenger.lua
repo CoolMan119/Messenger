@@ -3,7 +3,7 @@ function Setup()
   term.clear()
   term.setBackgroundColor(colors.gray)
   term.clear()
-  term.setCursorPos(1,20)
+  term.setCursorPos(20,1)
   term.setTextColor(colors.white)
   print("Setup")
   
