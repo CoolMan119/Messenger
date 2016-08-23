@@ -2,6 +2,7 @@
 --encryption.encrypt(key,message) (Used for encrypting)
 --encryption.decrypt(key,message) (Used for decrypting)
 --encryption.generateKey(length) (Returns a key of the given length)
+--var = encryption.generateKey(lengh) (saves generated key it to varible)
 encrypt = function(key,message)
   local counter = 1
   local out = ""
