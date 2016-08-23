@@ -2,7 +2,7 @@
 --encryption.encrypt(key,message) (Used for encrypting)
 --encryption.decrypt(key,message) (Used for decrypting)
 --encryption.generateKey(length) (Returns a key of the given length)
-local encrypt = function(key,message)
+encrypt = function(key,message)
   local counter = 1
   local out = ""
   if type(key) ~= "string" or string.len(key) < 1 then
@@ -21,7 +21,7 @@ local encrypt = function(key,message)
   end
   return out
 end
-local decrypt = function(key,message)
+decrypt = function(key,message)
   if (not key) or type(key) ~= "string" or string.len(key) < 1 then
     error("Invalid Key")
   end
@@ -40,7 +40,7 @@ local decrypt = function(key,message)
   end
   return out
 end
-local generateKey = function(length)
+generateKey = function(length)
   if (not length) or type(length) ~= "number" or length < 1 then
     error("Invalid Length")
   end
