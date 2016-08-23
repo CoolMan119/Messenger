@@ -13,7 +13,6 @@ elseif fs.exists("/status") == true then
           Load()
 end
 end
-end
 
        
 
