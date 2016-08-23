@@ -8,9 +8,9 @@ function Setup()
  
 
 function Load()
- term.clear()
- print("Loaded")
- print("This app does nothing yet, Sorry!")
+  term.clear()
+  print("Loaded")
+  print("This app does nothing yet, Sorry!")
 end
 
 -- Program Starts Here
@@ -26,7 +26,7 @@ elseif fs.exists("/status") == true then
     if result == "nosetup" then
        Setup()
    elseif result == "complete" then
-          Load()
-end
+    Load()
+    end
 end
 
