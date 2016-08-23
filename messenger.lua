@@ -28,7 +28,7 @@ function Setup()
   
 function rednetCheckSetup()
   local modemSide = getDeviceSide("modem")
-  if (modemSide) then
+   if (modemSide) then
      print("Rednet Found")
      textutils.slowPrint("Welp, this is the end of Setup! I really hope you enjoy this app! Please report all bugs on the Issues fourms! Thank You and have a Nice Day!")
      os.sleep(3)
