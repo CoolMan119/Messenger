@@ -1,4 +1,7 @@
 --Usable Characters 32-126
+--encryption.encrypt(key,message) (Used for encrypting)
+--encryption.decrypt(key,message) (Used for decrypting)
+--encryption.generateKey(length) (Returns a key of the given length)
 local encrypt = function(key,message)
   local counter = 1
   local out = ""
