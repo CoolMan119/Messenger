@@ -107,9 +107,15 @@ local lastX = 1
 for k, v in pairs(files) do
     req = http.get(v[2])
 
-    code = req.readAll()
+    if req ~= nil then
+        code = req.readAll()
 
-    req.close()
+        req.close()
+    else
+        paintutils.drawLine(1, 5, x, 5, colors.lime)
+
+        break
+    end
 
     if #files == k then
         paintutils.drawLine(1, 5, x, 5, colors.lime)
