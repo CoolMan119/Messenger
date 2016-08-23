@@ -24,7 +24,7 @@ function Setup()
   term.setCursorPos(1,1)
   textutils.slowPrint("Checking for rednet...")
   rednetCheckSetup()
-  end
+end
   
 function rednetCheckSetup()
   local modemSide = getDeviceSide("modem")
@@ -40,6 +40,7 @@ function rednetCheckSetup()
   else
     print("Please attach a modem. Press Enter to retry")
     rednetCheckSetup()
+  end
 end
  
 
