@@ -11,6 +11,10 @@ elseif fs.exists("/status") == true then
        Setup()
    elseif result == "complete" then
           Load()
+end
+end
+end
+
        
 
 function Setup()
@@ -24,4 +28,5 @@ function Load()
 term.clear()
 print("Loaded")
 print("This app does nothing yet, Sorry!")
+end
 
