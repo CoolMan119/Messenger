@@ -1,6 +1,29 @@
 foundModem = false
 -- Gets functions ready for use
+local actualColors = {
+	 colors.white,
+	 colors.orange,
+	 colors.magenta,
+	 colors.lightBlue,
+	 colors.yellow,
+	 colors.lime,
+	 colors.pink,
+	 colors.gray,
+	 colors.lightGray,
+	 colors.cyan,
+	 colors.purple,
+	 colors.blue,
+	 colors.brown,
+	 colors.green,
+	 colors.red,
+	 colors.black
+}
+
+local sx, sy = term.getSize()
+
 function Setup()
+	local colorSetup = false
+
 	term.clear()
 	term.setBackgroundColor(colors.black)
 	term.clear()
@@ -9,22 +32,52 @@ function Setup()
 	textutils.slowPrint("Welcome to Messaging!")
 	textutils.slowPrint("Before we can continue, we have to setup the app for you")
 	os.sleep(2)
-	term.clear()
-	term.setBackgroundColor(colors.gray)
-	term.clear()
-	term.setCursorPos(1,1)
-	print("Please type in a color theme")
-	colortheme = read()
-	print("Applying...")
-	shell.run("mkdir","config")
-	shell.run("cd","config")
-	
-	file = fs.open("/config/color", "w")
-	file.write(theme)
-	file.close()
-	term.clear()
-	term.setCursorPos(1,1)
-	textutils.slowPrint("Checking for rednet...")
+
+	if not fs.exists("config/color") then
+		while not colorSetup do --Fixes theme issue
+			term.setTextColor(colors.white)
+
+			term.clear()
+			term.setBackgroundColor(colors.gray)
+
+			paintutils.drawLine(1, 1, sx, 1, colors.lightGray)
+
+			term.setCursorPos(1, 1)
+
+			write("Setup")
+
+			term.setBackgroundColor(colors.gray)
+
+			term.setCursorPos(1, 3)
+
+			write("Enter theme code:")
+
+			local tc = read()
+
+			tc = tonumber(tc)
+
+			if tc ~= nil then
+				for k, v in pairs(actualColors) do
+					if v == tc then
+						colorSetup = true
+					end
+				end
+			end
+		end
+
+		local file = fs.open("config/color", "w")
+		file.write(tostring(tc)
+		file.close()
+
+		term.setBackgroundColor(tc)
+	else
+		local file = fs.open("config/color", "r")
+
+		term.setBackgroundColor(tonumber(file.readAll()))
+
+		file.close()
+	end
+
 	while not foundModem do
 		if rednetCheckSetup() then else 
 			error("Please attach a wireless modem and run Setup again")
