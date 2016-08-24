@@ -25,7 +25,7 @@ function Setup()
 	term.setCursorPos(1,1)
 	textutils.slowPrint("Checking for rednet...")
 	while not foundModem do
-		if rednetCheckup() then else 
+		if rednetCheckSetup() then else 
 			print("Please attached a wireless modem")
 		end
 	end
@@ -41,7 +41,7 @@ function Setup()
 end
  
 function rednetCheckSetup()
-  for k,v in pars(rs.getSides()) do
+  for k,v in pairs(rs.getSides()) do
     if peripheral.getType(v) == "modem" then
        if peripheral.call(v, "isWireless") == true then
          modemSide = v
