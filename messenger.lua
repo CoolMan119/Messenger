@@ -68,7 +68,7 @@ function Load()
   end
   file = fs.open("/config/color", "r")
   local theme = file.readLine()
-  term.setBackgroundColor("colors.", theme)
+  term.setBackgroundColor(theme)
   term.clear()
   term.setTextColor(colors.white)
   print("This app does nothing yet, Sorry!")
