@@ -89,6 +89,7 @@ if fs.exists("/status") == false then
 elseif fs.exists("/status") == true then
   file = fs.open("/status", "r")
   result = file.readLine()
+  file.close()
   if result == "nosetup" then
     Setup()
   elseif result == "complete" then
