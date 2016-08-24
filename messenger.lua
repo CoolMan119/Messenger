@@ -26,15 +26,15 @@ function Setup()
   RednetAgain()
 end
 
-function RednetAgain()
+function RednetAgain() end
   rednetCheckSetup()
 end
  
-function rednetCheckSetup()
-  foundModem = false
-  for k,v in pars(rs.getSides()) do
-    if peripheral.getType(v) == "modem" then
-       if peripheral.call(v, "isWireless") == true then
+function rednetCheckSetup() end
+   foundModem = false
+   for k,v in pars(rs.getSides()) do
+     if peripheral.getType(v) == "modem" then
+        if peripheral.call(v, "isWireless") == true then
          modemSide = v
          foundModem = true
        end
