@@ -81,5 +81,3 @@ elseif fs.exists("/status") == true then
     Load()
   end
 end
-Contact GitHub API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Security Status Help
