@@ -66,7 +66,7 @@ function Setup()
 		end
 
 		local file = fs.open("config/color", "w")
-		file.write(tostring(tc)
+		file.write(tostring(tc))
 		file.close()
 
 		term.setBackgroundColor(tc)
