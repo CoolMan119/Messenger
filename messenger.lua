@@ -27,8 +27,20 @@ function Setup()
   end
  
 function rednetCheckSetup()
-  local modemSide = getDeviceSide("modem")
-   if (modemSide) then
+  foundModem = false
+  for k,v in pars(rs.getSides()) do
+    if peripheral.getType(v) == "modem" then
+       if peripheral.call(v, "isWireless") == true then
+         modemSide = v
+         foundModem = true
+       end
+    end
+end
+if not foundModem then
+     print("Please attach a modem. Press Enter to retry")
+     enter = read()
+   end
+   rednetCheckSetup()
      print("Rednet Found")
      textutils.slowPrint("Welp, this is the end of Setup! I really hope you enjoy this app! Please report all bugs on the Issues fourms! Thank You and have a Nice Day!")
      os.sleep(3)
@@ -38,18 +50,24 @@ function rednetCheckSetup()
      file.exit()
      Load()
   else
-    print("Please attach a modem. Press Enter to retry")
-    enter = read()
-    end
     rednetCheckSetup()
+     print("Rednet Found")
+     textutils.slowPrint("Welp, this is the end of Setup! I really hope you enjoy this app! Please report all bugs on the Issues fourms! Thank You and have a Nice Day!")
+     os.sleep(3)
+     fs.delete("/status")
+     file = fs.open("/status", "w")
+     file.write("complete")
+     file.exit()
+     end
+     Load()
 end
- 
- 
+
 function Load()
   term.clear()
   print("Loaded")
   print("This app is under development and doesn't work yet, Sorry!")
 end
+
  
 -- Program Starts Here
 term.clear()
