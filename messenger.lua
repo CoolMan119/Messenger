@@ -31,11 +31,12 @@ function Setup()
 	end
 	print("Rednet Found")
 	textutils.slowPrint("Welp, this is the end of Setup! I really hope you enjoy this app! Please report all bugs on the Issues fourms! Thank You and have a Nice Day!")
-	os.sleep(3)
+	
 	fs.delete("/status")
 	file = fs.open("/status", "w")
 	file.write("complete")
-	file.exit()
+	file.close()
+	os.sleep(3)
 	Load()
 end
  
@@ -50,7 +51,7 @@ function rednetCheckSetup()
 	end
 	if not foundModem then
 		return false
-  end
+  	else
 		return true
 	end
 end
