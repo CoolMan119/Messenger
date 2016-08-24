@@ -69,8 +69,9 @@ function Setup()
 					term.setCursorPos(1, 5)
 
 					write("Invalid color code!")
-					
+
 					sleep(1)
+				end
 			end
 		end
 
