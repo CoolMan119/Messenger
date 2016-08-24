@@ -23,8 +23,12 @@ function Setup()
   term.clear()
   term.setCursorPos(1,1)
   textutils.slowPrint("Checking for rednet...")
+  RednetAgain()
+end
+
+function RednetAgain()
   rednetCheckSetup()
-  end
+end
  
 function rednetCheckSetup()
   foundModem = false
