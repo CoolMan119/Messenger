@@ -20,7 +20,7 @@ function Setup()
 	shell.run("cd","config")
 	
 	file = fs.open("/config/color", "w")
-	file.write(colortheme)
+	file.write("colors.", colortheme)
 	file.close()
 	term.clear()
 	term.setCursorPos(1,1)
@@ -61,9 +61,22 @@ end
 
 function Load()
   term.clear()
-	term.setCursorPos(1,1)
-  print("Loaded")
-  print("This app is under development and doesn't work yet, Sorry!")
+  term.setCursorPos(1,1)
+  rednetCheckSetup()
+  if rednetCheckSetup() then else
+  	error("Please atatch a wireless modem and run Messenger again")
+  end
+  file = fs.open("/config/color", "r")
+  file.readLine()
+  theme = file.readLine()
+  term.setBackgroundColor(theme)
+  term.clear()
+  term.setTextColor(colors.white)
+  print("This app does nothing yet, Sorry!")
+  
+end
+
+  
 end
 
  
