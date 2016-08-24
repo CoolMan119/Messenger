@@ -24,6 +24,8 @@ local sx, sy = term.getSize()
 function Setup()
 	local colorSetup = false
 
+	local wasInvalid = false
+
 	term.clear()
 	term.setBackgroundColor(colors.black)
 	term.clear()
@@ -37,8 +39,8 @@ function Setup()
 		while not colorSetup do --Fixes theme issue
 			term.setTextColor(colors.white)
 
-			term.clear()
 			term.setBackgroundColor(colors.gray)
+			term.clear()
 
 			paintutils.drawLine(1, 1, sx, 1, colors.lightGray)
 
@@ -62,6 +64,13 @@ function Setup()
 						colorSetup = true
 					end
 				end
+
+				if not colorSetup then
+					term.setCursorPos(1, 5)
+
+					write("Invalid color code!")
+					
+					sleep(1)
 			end
 		end
 
@@ -124,7 +133,6 @@ function Load()
   term.clear()
   term.setTextColor(colors.white)
   print("This app does nothing yet, Sorry!")
-  
 end
 
   
