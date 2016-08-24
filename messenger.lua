@@ -39,6 +39,8 @@ function rednetCheckSetup()
      Load()
   else
     print("Please attach a modem. Press Enter to retry")
+    enter = read()
+    end
     rednetCheckSetup()
 end
  
