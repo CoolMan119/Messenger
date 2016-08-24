@@ -18,6 +18,7 @@ function Setup()
 	print("Applying...")
 	shell.run("mkdir","config")
 	shell.run("cd","config")
+	
 	file = fs.open("/config/color", "w")
 	file.write(colortheme)
 	file.close()
@@ -26,7 +27,7 @@ function Setup()
 	textutils.slowPrint("Checking for rednet...")
 	while not foundModem do
 		if rednetCheckSetup() then else 
-			print("Please attached a wireless modem")
+			error("Please attach a wireless modem and run Setup again")
 		end
 	end
 	print("Rednet Found")
@@ -36,6 +37,7 @@ function Setup()
 	file = fs.open("/status", "w")
 	file.write("complete")
 	file.close()
+	fs.delete("/config/config")
 	os.sleep(3)
 	Load()
 end
